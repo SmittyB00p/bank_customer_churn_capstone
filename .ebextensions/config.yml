@@ -3,4 +3,4 @@ option_settings:
     elasticbeanstalk:
       environment:
         environment_name: 'bank_churn_prediction'
-        profile: 'null'
+      profile: 'null'
