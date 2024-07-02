@@ -1,0 +1,6 @@
+option_settings:
+  aws:
+    elasticbeanstalk:
+      environment:
+        environment_name: 'bank_churn_prediction'
+        profile: 'null'
