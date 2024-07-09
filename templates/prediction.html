@@ -1,0 +1,109 @@
+<html>
+<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='styles.css') }}">
+<body>
+    <div class="login">
+        <h1>Customer Retention Prediction</h1>
+
+        <form action="{{ url_for('predict_data')}}" method="post" id="prediction-form">
+            <div>
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="credit-score">Credit Score</label>
+                <input type="number" id="credit-score" name="credit-score" min="300" max="850" required />
+            </div>
+
+            <div>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="10" max="110" required/>
+            </div>
+
+            <div>
+                <label for="tenure">Tenure</label>
+                <input type="number" id="tenure" name="tenure" min="1" max="100" required/>
+            </div>
+
+            <div>
+                <label for="balance">Balance</label>
+                <input type="number" id="balance" name="balance" min="0" step=".01" required/>
+            </div>
+
+            <div>
+                <label for="products">Products</label>
+                <input type="number" id="products" name="products" min="0" max="5" required/>
+            </div>
+
+            <div>
+                <label for="credit-card">Credit Card</label>
+                <select name="credit-card" id="credit-card" name="credit-card" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="active-member">Membership Activity</label>
+                <select name="active-member" id="active-member" name="active-member" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="estimated-salary">Estimated Salary</label>
+                <input type="number" id="estimated-salary" name="salary" min="0" step=".01" required/>
+            </div>
+
+            <div>
+                <label for="complaint">Complaint?</label>
+                <select name="complaint" id="complaint" name="complain" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="satisfaction-score">Satisfaction Score</label>
+                <input type="number" id="satisfaction-score" name="satisfaction-score" min="1" max="5" required>
+            </div>
+
+            <div>
+                <label for="points-earned">Points Earned</label>
+                <input type="number" id="points-earned" name="points-earned" min="0" max="1000" required>
+            </div>
+
+            <div>
+                <label for="geography">Locale</label>
+                <select name="geography" id="geography" name="geography" required>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                    <option value="spain">Spain</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="card-type">Card Type</label>
+                <select name="card-type" id="card-type" name="card-type" required>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="platinum">Platinum</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="submit" class="submit-button", value="Click here to see the prediction!" required>
+            </div>
+        </form>
+    </div>
+
+    <h3>
+        {{ results }}
+    </h3>
+</body>
+</html>
